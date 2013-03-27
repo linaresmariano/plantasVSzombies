@@ -14,6 +14,9 @@ public class Juego {
 	
 	// Plantines disponibles
 	private ArrayList<Planta> jardinZEN = new ArrayList<Planta>();
+	
+	// Lista de zombies
+	private ArrayList<Zombie> zombies = new ArrayList<Zombie>();
 
 	public Juego() {
 		this.plantas.add(new Planta("Peashooters", 10, 10, true));
@@ -22,6 +25,8 @@ public class Juego {
 		this.plantas.add(new Planta("Wall-Nut", 10, 10, false));
 		this.plantas.add(new Planta("Potato Mines", 10, 10, false));
 		this.plantas.add(new Planta("Snow Pea", 10, 10, false));
+		
+		this.zombies.add(new Zombie());
 	}
 	
 	public void plantar(int fila, int columna, Planta plantin) throws ErrorTerreno {
@@ -73,6 +78,10 @@ public class Juego {
 		} else {		
 			System.out.println("NO HAY PREMIO POR MATAR AL ZOMBIE");
 		}
+	}
+	
+	public void upgradePlanta(Planta p, int ptAtk, int ptDef) {
+		p.upgrade(ptAtk, ptDef);
 	}
 	
 	public void sumarPuntos(int puntos) {

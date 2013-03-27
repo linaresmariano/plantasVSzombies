@@ -35,7 +35,7 @@ public class JuegoTest {
 		juego = new Juego();
 	}
 
-	@Test
+	//@Test
 	public void testPelear() {
 
 		for(int i=0; i < 8; i++) {
@@ -45,11 +45,10 @@ public class JuegoTest {
 		System.out.println("VIDA PLANTA1: "+ p1.getPuntosDefensa());
 		System.out.println("VIDA PLANTA2: "+ p2.getPuntosDefensa());
 		System.out.println("PUNTOS ACTUALES: " + juego.getPuntos());
-		
-		assertTrue(true);
+
 	}
 	
-	@Test
+	//@Test
 	public void testPelearYPerder() {
 		
 		p1.setPuntosDefensa(10);
@@ -64,7 +63,7 @@ public class JuegoTest {
 		assertEquals(p2.getPuntosDefensa(), 0);
 		assertEquals(z.getPuntosDefensa(), 720);
 	}
-	
+
 	@Test
 	public void testPlantarEnLugarIncorrecto() {
 		Planta acuatica = new Planta("Snow Pea", 10, 10, false);
@@ -73,8 +72,7 @@ public class JuegoTest {
 			// Por defecto todos los terrenos son terrestres
 			juego.plantar(2,2, acuatica);
 			fail("No tira exception ErrorDeTerreno");
-		} catch(Exception e) {
-			assertTrue(true);
+		} catch(ErrorTerreno e) {
 		}
 	}
 
@@ -85,7 +83,6 @@ public class JuegoTest {
 		try {
 			// Por defecto todos los terrenos son terrestres
 			juego.plantar(2,2, terrestre);
-			assertTrue(true);
 		} catch(ErrorTerreno e) {
 			fail("No tira exception ErrorDeTerreno");
 		}

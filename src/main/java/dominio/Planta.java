@@ -28,6 +28,11 @@ public class Planta {
 		System.out.println("Soy una planta y me mori");
 	}
 	
+	public void upgrade(int ptAtk, int ptDef) {
+		this.puntosAtaque += ptAtk;
+		this.puntosDefensa += ptDef;
+	}
+	
 	public void setPuntosAtaque(int i) {
 		this.puntosAtaque = i;		
 	}
